@@ -424,10 +424,10 @@ hr{
     top: -30px;
   }
   #message-container {
-    bottom: 250px;
+    bottom: 240px;
     width: 90%;
     position: relative;
-    left: 10px;
+    left: -10px;
   }
 
 }
@@ -542,11 +542,12 @@ hr{
     text-align: center;
     margin-top: 20px;
   }
-
   #message-container {
-    bottom: 160px;
+    bottom: 260px;
     width: 90%;
     position: relative;
-    left: 10px;
+    left: 18px;
   }
+
+  
 }
