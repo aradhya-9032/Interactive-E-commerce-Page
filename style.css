@@ -156,10 +156,10 @@ body {
   top: -24px;
   left: 9px;
 }
-.color.beige { background-color: #ECDECC;border-radius: 5px;}
-.color.pink { background-color: #BBD278;   border-radius: 5px; }
-.color.green { background-color: #BBC1F8;   border-radius: 5px; }
-.color.purple { background-color: #FFD3F8;    border-radius: 5px; }
+.color.yellow { background-color: #ECDECC; border-radius: 5px;}
+.color.green { background-color: #BBD278;   border-radius: 5px; }
+.color.blue { background-color: #BBC1F8;   border-radius: 5px; }
+.color.pink { background-color: #FFD3F8;    border-radius: 5px; }
 
 .sizes {
   display: flex;
@@ -179,12 +179,13 @@ label{
 }
 .quantity-selector {
   display: flex;
+  justify-content: center;
   align-items: center;
   background: #F3F3F3;
-  margin-top: 30px;
+  margin-top: 38px;
   font-size: 18px;
   border-radius: 30px;
-  padding:3px 5px;
+  padding:13px 5px;
   width: 22%;
   height: 7%;
 }
@@ -276,121 +277,6 @@ hr{
   font-family: inter;
 }
 
-/* Mobile: 320px to 767px */
-@media (max-width: 767px) {
-  .product-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-  }
-
-  .product-images, .product-details {
-      width: 100%;
-      padding: 10px;
-  }
-
-  .thumbnail-images img {
-      width: 40px;
-      height: 40px;
-  }
-
-  .sizes button, .quantity-selector button {
-      padding: 8px;
-  }
-
-  .add-to-cart {
-      padding: 8px 16px;
-  }
-
-  .product-title {
-      font-size: 20px;
-  }
-
-  .product-price {
-      font-size: 18px;
-  }
-
-  .product-description {
-      font-size: 14px;
-  }
-}
-
-/* Tablet: 768px to 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .product-container {
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 15px;
-  }
-
-  .product-images, .product-details {
-      width: 50%;
-      padding: 15px;
-  }
-
-  .thumbnail-images img {
-      width: 45px;
-      height: 45px;
-  }
-
-  .sizes button, .quantity-selector button {
-      padding: 9px;
-  }
-
-  .add-to-cart {
-      padding: 9px 18px;
-  }
-
-  .product-title {
-      font-size: 22px;
-  }
-
-  .product-price {
-      font-size: 19px;
-  }
-
-  .product-description {
-      font-size: 15px;
-  }
-}
-
-/* Desktop: Above 1024px */
-@media (min-width: 1025px) {
-  .product-container {
-      padding: 20px;
-  }
-
-  .product-images, .product-details {
-      padding: 20px;
-  }
-
-  .thumbnail-images img {
-      width: 50px;
-      height: 50px;
-  }
-
-  .sizes button, .quantity-selector button {
-      padding: 10px;
-  }
-
-  .add-to-cart {
-      padding: 10px 20px;
-  }
-
-  .product-title {
-      font-size: 24px;
-  }
-
-  .product-price {
-      font-size: 20px;
-  }
-
-  .product-description {
-      font-size: 16px;
-  }
-}
-
-
 #cart-container {
   display: none; 
   position: absolute; 
@@ -477,39 +363,190 @@ hr{
   background-color: rgba(0,0,0,0.5); 
   z-index: 500;
 }
-/* Media Queries */
-@media (max-width: 768px) {
-  #cart-modal {
-      width: 90%;
-      height: 80%;
-      padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  #cart-modal {
-      width: 95%;
-      height: 90%;
-      padding: 10px;
-  }
-  .cart-item {
-      padding: 8px;
-  }
-  .cart-item button {
-      padding: 6px 10px;
-  }
-  #total-price {
-      font-size: 16px;
-      padding: 8px;
-  }
-  #cart-modal .close-btn {
-      padding: 8px 16px;
-  }
-}
 
 .color.selected,.sizes button.selected {
   border: 2px solid black ;
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+
+@media (max-width: 767px) {
+  .product-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .product-images, .product-details {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .thumbnail-images {
+    justify-content:start;
+  }
+
+  .thumbnail-images img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-price {
+    font-size: 22px;
+  }
+
+  .original-price {
+    font-size: 15px;
+  }
+
+  .quantity-selector {
+    margin-top: 10px;
+  }
+
+  .product-description {
+    font-size: 16px;
+    margin-top: 20px;
+  
+  }
+
+  .add-to-cart {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+    left: -40px;
+    top: -30px;
+  }
+  #message-container {
+    bottom: 250px;
+    width: 90%;
+    position: relative;
+    left: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    left: 0;
+    top: 0;
+  }
+
+  .product-images {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #main-image {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .thumbnail-images {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .thumbnail-images img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+
+  .product-details {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .product-price {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .original-price {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .discount {
+    font-size: 14px;
+    font-weight: 100;
+  }
+
+  .color-selector,
+  .size-selector,
+  .quantity-selector {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .colors {
+    justify-content: center;
+  }
+
+  .color {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sizes {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sizes label {
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+  }
+
+  .quality-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quantity-selector {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .add-to-cart-container {
+    width: 80%;
+  }
+
+  .product-description {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #message-container {
+    bottom: 160px;
+    width: 90%;
+    position: relative;
+    left: 10px;
+  }
 }
