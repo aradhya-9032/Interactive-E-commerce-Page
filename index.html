@@ -6,14 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
-    <title>Coding Assesment L2 boilerplate</title>
+    <title>Interactive E-commerce Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 
 <body>
     <!-- Your code goes here -->
     <div class="container">
-        <a href="https://github.com/mmdmrishabh/Coding-assessment-l2-Boilerplate-code/blob/main/Readme.md" target="_blank">Read how to work with boilerplate</a>
+        <!-- <a href="https://github.com/mmdmrishabh/Coding-assessment-l2-Boilerplate-code/blob/main/Readme.md" target="_blank">Read how to work with boilerplate</a> -->
+      
+        <div class="product-container">
+            <div class="product-images">
+                <img id="main-image" src="./assets/thumb1.jpg" alt="Main Product Image">
+                <div class="thumbnail-images">
+                    <img src="./assets/thumb1.jpg" alt="Thumbnail 1" onclick="changeImage('./assets/thumb1.jpg')">
+                    <img src="./assets/thumb2.jpg" alt="Thumbnail 2" onclick="changeImage('./assets/thumb2.jpg')">
+                    <img src="./assets//thumb3.jpg" alt="Thumbnail 3" onclick="changeImage('./assets/thumb3.jpg')">
+                    <img src="./assets/thumb4.jpg" alt="Thumbnail 4" onclick="changeImage('./assets/thumb4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Embrace Sideboard</h1>
+                <hr>
+                <h3 class="product-price">$12999.00 <span class="discount" style="font-size: 14px; font-weight: 100;">35% Off</span></h3>
+                    <h5 class="original-price">$19999.00</h5> 
+               <hr>
+                <div class="color-selector">
+                    <p>Choose a Color</p>
+                    <div class="colors">
+                        <div class="color beige" onclick="selectColor('#ECDECC')"></div>
+                        <div class="color pink" onclick="selectColor('#BBD278')"></div>
+                        <div class="color green" onclick="selectColor('#BBC1F8')"></div>
+                        <div class="color purple" onclick="selectColor('#FFD3F8')"></div>
+                    </div>
+                    <div class="icon" id="selected-icon"></div>
+                </div>
+                <hr>
+                <div class="size-selector">
+                    <p>Choose a Size</p>
+                    <div class="sizes">
+                        <label><input type="radio" name="size" value="Small" onclick="selectSize('Small')"> Small</label>
+                        <label><input type="radio" name="size" value="Medium" onclick="selectSize('Medium')"> Medium</label>
+                        <label><input type="radio" name="size" value="Large" onclick="selectSize('Large')"> Large</label>
+                        <label><input type="radio" name="size" value="Extra Large" onclick="selectSize('Extra Large')"> Extra Large</label>
+                        <label><input type="radio" name="size" value="XXL" onclick="selectSize('XXL')"> XXL</label>
+                    </div>
+                </div>
+                
+                <div class="quality-container">
+                    <div class="quantity-selector">
+                      <button onclick="decreaseQuantity()">-</button>
+                      <input type="text" id="quantity" value="1" readonly>
+                      <button onclick="increaseQuantity()">+</button>
+                    </div>
+                    <div class="add-to-cart-container">
+                      <button class="add-to-cart" style="padding: 10px 70px; font-size: 17px;" onclick="addToCart()"> <span style="color: black; font-size: 20px">🛒</span> Add To Cart</button>
+                    </div>
+                  </div>
+                  <hr style="position:relative; top: 45px;">
+                  <p class="product-description" style="font-size: 18px;">
+                    The Embrace Sideboard is a stylish wear. With a top cloth designed to provide superior protection and look great, this storage solution is both functional and attractive. It fits seamlessly into any home decor, with clean lines and a timeless look. Crafted from premium materials for a combination of style, durability, and reliability.
+                  </p>
+                  <div id="message-container" class="message-container"> </div>
+            </div>
+        </div>
+
     </div>
     <!-- Happy coding 😊 -->
     <script src="./script.js"></script>
